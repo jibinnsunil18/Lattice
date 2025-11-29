@@ -234,25 +234,6 @@ img {
 }
 
 .hero-title {
-  font-size: clamp(3rem, 8vw, 6rem);
-  line-height: 1;
-  margin-bottom: 30px;
-}
-
-.hero-subtitle {
-  font-size: 1.2rem;
-  color: var(--text-muted);
-  margin-bottom: 50px;
-  max-width: 500px;
-  border-left: 1px solid var(--accent-primary);
-  padding-left: 20px;
-}
-
-.btn {
-  display: inline-block;
-  padding: 15px 40px;
-  font-family: var(--font-heading);
-  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: var(--bg-color);
@@ -277,23 +258,6 @@ img {
 
 .btn:hover::before {
   left: 100%;
-}
-
-.btn:hover {
-  box-shadow: 0 0 30px rgba(0, 243, 255, 0.4);
-  transform: translateY(-2px);
-}
-
-.btn-outline {
-  background: transparent;
-  border: 1px solid var(--accent-primary);
-  color: var(--accent-primary);
-  margin-left: 20px;
-}
-
-.btn-outline:hover {
-  background: rgba(0, 243, 255, 0.1);
-  box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
 }
 
 .btn-full {
