@@ -4,21 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Lattice</title>
+    <title>About | Lattice</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Space+Grotesk:wght@700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@500;700&display=swap"
         rel="stylesheet">
 </head>
 
 <body>
 
-    <!-- Navigation -->
     <header class="header">
         <div class="container nav-container">
-            <a href="index.html" class="logo">Lattice<span class="dot">.</span></a>
+            <a href="index.html" class="logo">Lattice<span>.</span></a>
             <nav class="nav-menu">
                 <ul class="nav-list">
                     <li><a href="index.html" class="nav-link">Home</a></li>
@@ -26,112 +25,83 @@
                     <li><a href="services.html" class="nav-link">Services</a></li>
                     <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
                     <li><a href="blog.html" class="nav-link">Blog</a></li>
-                    <li><a href="contact.html" class="nav-link btn-nav">Contact</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
-            <button class="mobile-toggle" aria-label="Toggle navigation">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
+            <button class="mobile-toggle"><span class="bar"></span><span class="bar"></span><span
+                    class="bar"></span></button>
         </div>
     </header>
 
-    <!-- Page Header -->
-    <section class="section bg-light" style="padding-top: 120px;">
-        <div class="container text-center">
-            <h1 class="section-title">About Lattice</h1>
-            <p class="section-desc">We are a team of innovators, designers, and engineers dedicated to transforming
-                ideas into reality.</p>
+    <section class="section" style="padding-top: 150px;">
+        <div class="container">
+            <h1 class="hero-title">WHO <span class="text-gradient">WE ARE</span></h1>
+            <p class="hero-subtitle">A collective of visionaries, engineers, and designers pushing the boundaries of
+                what's possible in the digital realm.</p>
+
+            <div class="grid-3" style="margin-top: 80px;">
+                <div class="card">
+                    <h3>01. Mission</h3>
+                    <p>To decode complexity and engineer simplicity. We build systems that empower humanity to achieve
+                        more.</p>
+                </div>
+                <div class="card">
+                    <h3>02. Vision</h3>
+                    <p>A decentralized, interconnected future where technology serves as an invisible, seamless enabler.
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>03. Method</h3>
+                    <p>Rigorous testing, atomic design, and continuous deployment. We don't just write code; we craft
+                        logic.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Mission/Vision -->
     <section class="section">
         <div class="container">
-            <div class="about-grid">
-                <div class="about-card">
-                    <div class="icon-box">🚀</div>
-                    <h3>Mission</h3>
-                    <p>To empower businesses with cutting-edge technology and design, enabling them to thrive in the
-                        digital age.</p>
-                </div>
-                <div class="about-card">
-                    <div class="icon-box">👁️</div>
-                    <h3>Vision</h3>
-                    <p>A world where digital interaction is seamless, intuitive, and beautiful, creating meaningful
-                        connections.</p>
-                </div>
-                <div class="about-card">
-                    <div class="icon-box">💎</div>
-                    <h3>Values</h3>
-                    <p>Integrity, Innovation, and Excellence. We believe in doing the right thing, even when no one is
-                        watching.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Section -->
-    <section class="section bg-light">
-        <div class="container">
-            <div class="section-header text-center">
-                <h2 class="section-title">Our Team</h2>
-                <p class="section-desc">Meet the minds behind Lattice.</p>
-            </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-item text-center" style="padding: 20px;">
-                    <div class="client-avatar"
-                        style="width: 100px; height: 100px; margin: 0 auto 20px; font-size: 2rem;">CEO</div>
+            <h2 class="section-title">THE SQUAD</h2>
+            <div class="grid-3" style="margin-top: 40px;">
+                <div class="card">
+                    <div
+                        style="width: 60px; height: 60px; background: var(--accent-primary); border-radius: 50%; margin-bottom: 20px;">
+                    </div>
                     <h3>Alex Morgan</h3>
-                    <p class="text-light">Chief Executive Officer</p>
+                    <p style="color: var(--accent-primary);">CEO / Architect</p>
                 </div>
-                <div class="portfolio-item text-center" style="padding: 20px;">
-                    <div class="client-avatar"
-                        style="width: 100px; height: 100px; margin: 0 auto 20px; font-size: 2rem; background: var(--secondary-color);">
-                        CTO</div>
+                <div class="card">
+                    <div
+                        style="width: 60px; height: 60px; background: var(--accent-secondary); border-radius: 50%; margin-bottom: 20px;">
+                    </div>
                     <h3>Sarah Lee</h3>
-                    <p class="text-light">Chief Technology Officer</p>
+                    <p style="color: var(--accent-secondary);">CTO / Lead Dev</p>
                 </div>
-                <div class="portfolio-item text-center" style="padding: 20px;">
-                    <div class="client-avatar"
-                        style="width: 100px; height: 100px; margin: 0 auto 20px; font-size: 2rem; background: var(--accent-color);">
-                        CDO</div>
+                <div class="card">
+                    <div style="width: 60px; height: 60px; background: #fff; border-radius: 50%; margin-bottom: 20px;">
+                    </div>
                     <h3>James Chen</h3>
-                    <p class="text-light">Chief Design Officer</p>
+                    <p style="color: #fff;">Design Lead</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-brand">
-                    <h3>Lattice<span class="dot">.</span></h3>
-                    <p>Building the future, one pixel at a time.</p>
+                <div>
+                    <div class="logo">Lattice<span>.</span></div>
                 </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
+                <div>
+                    <h4>SITEMAP</h4>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
                 </div>
-                <div class="footer-social">
-                    <h4>Follow Us</h4>
-                    <div class="social-icons">
-                        <a href="#">LinkedIn</a>
-                        <a href="#">Twitter</a>
-                        <a href="#">GitHub</a>
-                    </div>
+                <div>
+                    <h4>CONNECT</h4>
+                    <a href="#">LinkedIn</a>
                 </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; <span id="year"></span> Lattice. All rights reserved.</p>
             </div>
         </div>
     </footer>
