@@ -164,6 +164,31 @@ document.querySelectorAll('.btn-social').forEach(btn => {
   });
 });
 
+// ============ DASHBOARD NAVIGATION ============
+const sidebarLinks = document.querySelectorAll('.sidebar-nav .nav-item');
+const contentSections = document.querySelectorAll('.content-section');
+
+sidebarLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    // Remove active class from all links
+    sidebarLinks.forEach(l => l.classList.remove('active'));
+    // Add active class to clicked link
+    link.classList.add('active');
+
+    // Hide all sections
+    contentSections.forEach(section => section.style.display = 'none');
+
+    // Show target section
+    const targetId = `section-${link.dataset.target}`;
+    const targetSection = document.getElementById(targetId);
+    if (targetSection) {
+      targetSection.style.display = 'block';
+    }
+  });
+});
+
 // ============ MOBILE NAVIGATION ============
 if (mobileToggle) {
   mobileToggle.addEventListener('click', () => {

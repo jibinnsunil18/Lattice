@@ -80,6 +80,13 @@ img {
   position: relative;
 }
 
+.section-title {
+  margin-bottom: 30px;
+  color: var(--accent-primary);
+  border-bottom: 1px solid var(--glass-border);
+  padding-bottom: 10px;
+}
+
 /* ============ HEADER ============ */
 .header {
   position: fixed;
@@ -305,6 +312,12 @@ img {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 40px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
 }
 
 .card {
@@ -560,6 +573,7 @@ textarea.form-input {
   border-radius: 4px;
   color: var(--text-muted);
   transition: var(--transition);
+  cursor: pointer;
 }
 
 .sidebar-nav a:hover,
@@ -646,6 +660,69 @@ textarea.form-input {
 
 .post-actions button:hover {
   color: var(--accent-primary);
+}
+
+/* Products */
+.product-card {
+  padding: 20px;
+  text-align: center;
+}
+
+.product-img {
+  height: 150px;
+  background: #333;
+  margin-bottom: 15px;
+  border-radius: 4px;
+}
+
+/* Jobs */
+.job-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.job-card {
+  padding: 25px;
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.badge {
+  background: rgba(0, 243, 255, 0.1);
+  color: var(--accent-primary);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+.job-company {
+  color: var(--accent-secondary);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* News */
+.news-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.news-card {
+  padding: 25px;
+}
+
+.news-date {
+  font-size: 0.8rem;
+  color: var(--accent-primary);
+  display: block;
+  margin-bottom: 5px;
 }
 
 /* Right Panel */
