@@ -1,180 +1,101 @@
-// ============ PAGE MANAGEMENT ============
-function showLoginPage() {
-  document.getElementById('auth-container').classList.add('active');
-  document.getElementById('app-container').classList.remove('active');
+// ============ DOM ELEMENTS ============
+const mobileToggle = document.querySelector('.mobile-toggle');
+const navMenu = document.querySelector('.nav-menu');
+const header = document.querySelector('.header');
+const navLinks = document.querySelectorAll('.nav-link');
+
+// ============ MOBILE NAVIGATION ============
+if (mobileToggle) {
+  mobileToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+
+    // Animate Hamburger
+    const bars = mobileToggle.querySelectorAll('.bar');
+    if (navMenu.classList.contains('active')) {
+      bars[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+      bars[1].style.opacity = '0';
+      bars[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+    } else {
+      bars[0].style.transform = 'none';
+      bars[1].style.opacity = '1';
+      bars[2].style.transform = 'none';
+    }
+  });
 }
 
-function showAppPage() {
-  document.getElementById('auth-container').classList.remove('active');
-  document.getElementById('app-container').classList.add('active');
-}
-
-// ============ NAVIGATION ============
-const navButtons = document.querySelectorAll('.nav-icon[data-target]');
-const contentSections = document.querySelectorAll('.content-section');
-
-navButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    // Remove active class from all buttons and sections
-    navButtons.forEach(b => b.classList.remove('active'));
-    contentSections.forEach(s => s.classList.remove('active'));
-
-    // Add active class to clicked button
-    btn.classList.add('active');
-
-    // Show target section
-    const targetId = btn.getAttribute('data-target');
-    document.getElementById(targetId).classList.add('active');
+// Close menu when link is clicked
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    navMenu.classList.remove('active');
+    const bars = mobileToggle.querySelectorAll('.bar');
+    if (bars.length > 0) {
+      bars[0].style.transform = 'none';
+      bars[1].style.opacity = '1';
+      bars[2].style.transform = 'none';
+    }
   });
 });
 
-// ============ AUTHENTICATION ============
-const loginForm = document.getElementById('login-form');
-const signupForm = document.getElementById('signup-form');
-const showSignupBtn = document.getElementById('show-signup-btn');
-const showLoginBtn = document.getElementById('show-login-btn');
-const authError = document.getElementById('auth-error');
-
-// Toggle between Login and Signup
-showSignupBtn.addEventListener('click', () => {
-  loginForm.classList.remove('active');
-  signupForm.classList.add('active');
-  authError.textContent = '';
+// ============ ACTIVE LINK HIGHLIGHTING ============
+const currentLocation = location.pathname.split('/').pop() || 'index.html';
+navLinks.forEach(link => {
+  if (link.getAttribute('href') === currentLocation) {
+    link.classList.add('active');
+  }
 });
 
-showLoginBtn.addEventListener('click', (e) => {
-  e.preventDefault();
-  signupForm.classList.remove('active');
-  loginForm.classList.add('active');
-  authError.textContent = '';
-});
-
-// Login Logic
-loginForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const email = document.getElementById('login-email').value;
-  const password = document.getElementById('login-password').value;
-
-  if (email && password) {
-    // Simulate login
-    localStorage.setItem('currentUser', JSON.stringify({ username: email.split('@')[0] }));
-    loadApp();
+// ============ HEADER SCROLL EFFECT ============
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    header.classList.add('scrolled');
   } else {
-    authError.textContent = 'Please enter valid credentials';
+    header.classList.remove('scrolled');
   }
 });
 
-// Signup Logic
-signupForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const username = document.getElementById('signup-username').value;
-  const email = document.getElementById('signup-email').value;
+// ============ SCROLL ANIMATIONS ============
+const observerOptions = {
+  threshold: 0.1
+};
 
-  if (username && email) {
-    // Simulate signup
-    localStorage.setItem('currentUser', JSON.stringify({ username: username }));
-    loadApp();
-  }
-});
-
-// Logout
-document.getElementById('logout-btn').addEventListener('click', () => {
-  localStorage.removeItem('currentUser');
-  showLoginPage();
-});
-
-// ============ APP LOGIC ============
-function loadApp() {
-  const user = JSON.parse(localStorage.getItem('currentUser'));
-  if (user) {
-    document.getElementById('current-username').textContent = user.username;
-    document.getElementById('sidebar-username').textContent = user.username;
-    showAppPage();
-    loadPosts();
-  } else {
-    showLoginPage();
-  }
-}
-
-// Feed Logic
-const messageInput = document.getElementById('message-input');
-const sendBtn = document.getElementById('send-btn');
-const feedStream = document.getElementById('feed-stream');
-
-function loadPosts() {
-  // Simulate loading posts
-  feedStream.innerHTML = '';
-  const posts = [
-    {
-      author: 'Dr. Emily Carter',
-      role: 'Molecular Biologist',
-      time: '2h ago',
-      content: 'Just published our latest findings on CRISPR-Cas9 off-target effects. Exciting times for gene editing! 🧬 #Science #Genetics',
-      avatar: '👩‍🔬'
-    },
-    {
-      author: 'Prof. Alan Grant',
-      role: 'Paleontologist',
-      time: '5h ago',
-      content: 'Digging into some new strata today. The fossil record never ceases to amaze. 🦕',
-      avatar: '🦖'
-    },
-    {
-      author: 'Dr. Sheldon Cooper',
-      role: 'Theoretical Physicist',
-      time: '1d ago',
-      content: 'String theory suggests that the fundamental constituents of the universe are one-dimensional "strings". Discuss.',
-      avatar: '⚛️'
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
     }
-  ];
+  });
+}, observerOptions);
 
-  posts.forEach(post => addPostToDOM(post));
-}
-
-function addPostToDOM(post) {
-  const postEl = document.createElement('div');
-  postEl.className = 'post-card';
-  postEl.innerHTML = `
-    <div class="post-header">
-      <div class="user-avatar">${post.avatar || '👤'}</div>
-      <div class="post-info">
-        <h4>${post.author}</h4>
-        <p>${post.role} • ${post.time}</p>
-      </div>
-    </div>
-    <div class="post-content">
-      <p>${post.content}</p>
-    </div>
-    <div class="action-row">
-      <button class="action-btn">👍 Like</button>
-      <button class="action-btn">💬 Comment</button>
-      <button class="action-btn">↗️ Share</button>
-    </div>
-  `;
-  feedStream.prepend(postEl);
-}
-
-sendBtn.addEventListener('click', () => {
-  const text = messageInput.value.trim();
-  if (text) {
-    const user = JSON.parse(localStorage.getItem('currentUser'));
-    addPostToDOM({
-      author: user.username,
-      role: 'Research Scientist',
-      time: 'Just now',
-      content: text,
-      avatar: '👤'
-    });
-    messageInput.value = '';
-  }
+document.querySelectorAll('.card, .hero-content, .section-title').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(30px)';
+  el.style.transition = 'all 0.6s ease-out';
+  observer.observe(el);
 });
 
-// Initialize
-window.addEventListener('load', () => {
-  const user = localStorage.getItem('currentUser');
-  if (user) {
-    loadApp();
-  } else {
-    showLoginPage();
-  }
-});
+// ============ DYNAMIC YEAR ============
+const yearSpan = document.getElementById('year');
+if (yearSpan) {
+  yearSpan.textContent = new Date().getFullYear();
+}
+
+// ============ FORM DEMO ============
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const btn = contactForm.querySelector('button');
+    const originalText = btn.textContent;
+
+    btn.textContent = 'TRANSMITTING...';
+    btn.style.background = 'var(--accent-secondary)';
+
+    setTimeout(() => {
+      alert('TRANSMISSION RECEIVED. WE WILL MAKE CONTACT SOON.');
+      contactForm.reset();
+      btn.textContent = originalText;
+      btn.style.background = '';
+    }, 1500);
+  });
+}
