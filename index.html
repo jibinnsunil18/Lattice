@@ -3,304 +3,183 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lattice - Science Network</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-
-<body>
-  <!-- Auth Container -->
-  <div id="auth-container" class="auth-container active">
-    <div class="auth-box">
-      <h1 class="brand-title">Lattice</h1>
-      <p class="brand-subtitle">Connect with the scientific community.</p>
-
-      <!-- Login Form -->
-      <form id="login-form" class="auth-form active">
-        <div class="form-header">
-          <h2>Sign In</h2>
-          <p>Stay updated on your professional world.</p>
-        </div>
-
-        <div class="social-login">
-          <button type="button" class="btn-social google" id="login-google">
-            <span class="icon">G</span> Continue with Google
-          </button>
-          <button type="button" class="btn-social github" id="login-github">
-            <span class="icon">GH</span> Continue with GitHub
-          </button>
-          <button type="button" class="btn-social linkedin" id="login-linkedin">
-            <span class="icon">in</span> Continue with LinkedIn
-          </button>
-        </div>
-
-        <div class="auth-divider"><span>or with email</span></div>
-
-        <div class="form-group">
-          <input type="email" id="login-email" placeholder="Email or Phone" required />
-        </div>
-        <div class="form-group">
-          <input type="password" id="login-password" placeholder="Password" required />
-        </div>
-        <button type="submit" class="btn-primary">Sign in</button>
-        <div class="auth-footer">
-          <button type="button" class="btn-text" id="show-signup-btn">New to Lattice? Join now</button>
-        </div>
-      </form>
-
-      <!-- Signup Form -->
-      <form id="signup-form" class="auth-form">
-        <div class="form-header">
-          <h2>Join Lattice</h2>
-          <p>Make the most of your professional life.</p>
-        </div>
-
-        <div class="social-login">
-          <button type="button" class="btn-social google" id="signup-google">
-            <span class="icon">G</span> Sign up with Google
-          </button>
-        </div>
-
-        <div class="auth-divider"><span>or with email</span></div>
-
-        <div class="form-group">
-          <input type="text" id="signup-username" placeholder="Full Name" required />
-        </div>
-        <div class="form-group">
-          <input type="email" id="signup-email" placeholder="Email" required />
-        </div>
-        <div class="form-group">
-          <input type="password" id="signup-password" placeholder="Password (6+ characters)" required />
-        </div>
-        <p class="terms-text">By clicking Agree & Join, you agree to the User Agreement, Privacy Policy, and Cookie
-          Policy.</p>
-        <button type="submit" class="btn-success">Agree & Join</button>
-        <div class="auth-footer">
-          <p class="switch-auth">Already on Lattice? <a href="#" id="show-login-btn">Sign in</a></p>
-        </div>
-      </form>
-
-      <p id="auth-error" class="error-message"></p>
+  <div class="profile-card">
+    <div class="profile-bg"></div>
+    <div class="profile-info">
+      <div class="profile-avatar">👤</div>
+      <h3 id="sidebar-username">User Name</h3>
+      <p class="profile-headline">Research Scientist at Institute</p>
+    </div>
+    <div class="profile-stats">
+      <div class="stat-row">
+        <span>Profile viewers</span>
+        <span class="stat-num">42</span>
+      </div>
+      <div class="stat-row">
+        <span>Post impressions</span>
+        <span class="stat-num">1.2k</span>
+      </div>
     </div>
   </div>
+  </aside>
 
-  <!-- Main App Container -->
-  <div id="app-container" class="app-container">
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-      <div class="nav-left">
-        <div class="nav-logo">Lattice</div>
-        <div class="nav-search">
-          <input type="text" placeholder="Search for scientists, products, news..." />
+  <!-- Main Feed / Content Area -->
+  <main class="content-area">
+
+    <!-- HOME FEED SECTION -->
+    <section id="feed-section" class="content-section active">
+      <div class="create-post-card">
+        <div class="input-row">
+          <div class="user-avatar">👤</div>
+          <input type="text" id="message-input" placeholder="Share your research or ask a question..."
+            autocomplete="off" />
+        </div>
+        <div class="action-row">
+          <button class="action-btn">📷 Media</button>
+          <button class="action-btn">📄 Article</button>
+          <button id="send-btn" class="post-btn">Post</button>
         </div>
       </div>
-      <div class="nav-center">
-        <button class="nav-icon active" data-target="feed-section" title="Home">
-          <span>🏠</span>
-          <span class="nav-label">Home</span>
-        </button>
-        <button class="nav-icon" data-target="network-section" title="My Network">
-          <span>👥</span>
-          <span class="nav-label">Network</span>
-        </button>
-        <button class="nav-icon" data-target="products-section" title="Products">
-          <span>🔬</span>
-          <span class="nav-label">Products</span>
-        </button>
-        <button class="nav-icon" data-target="news-section" title="Science News">
-          <span>📰</span>
-          <span class="nav-label">News</span>
-        </button>
+      <div id="feed-stream" class="feed-stream">
+        <!-- Posts will appear here -->
+        <div class="loading-spinner">Loading updates...</div>
       </div>
-      <div class="nav-right">
-        <div class="user-profile-pill">
-          <span id="current-username">User</span>
-        </div>
-        <button class="nav-circle-btn" id="logout-btn" title="Logout">🚪</button>
+    </section>
+
+    <!-- NETWORK SECTION -->
+    <section id="network-section" class="content-section">
+      <div class="section-header">
+        <h2>My Network</h2>
+        <button class="btn-secondary">Manage</button>
       </div>
-    </nav>
+      <div class="network-grid">
+        <!-- Example Connection Cards -->
+        <div class="connection-card">
+          <div class="conn-bg"></div>
+          <div class="conn-avatar">🧬</div>
+          <h3>Dr. Sarah Miller</h3>
+          <p>Biochemist | Stanford</p>
+          <button class="btn-connect">Connect</button>
+        </div>
+        <div class="connection-card">
+          <div class="conn-bg"></div>
+          <div class="conn-avatar">🔭</div>
+          <h3>James Chen</h3>
+          <p>Astrophysicist | NASA</p>
+          <button class="btn-connect">Connect</button>
+        </div>
+        <div class="connection-card">
+          <div class="conn-bg"></div>
+          <div class="conn-avatar">🧠</div>
+          <h3>Dr. Raj Patel</h3>
+          <p>Neuroscientist | MIT</p>
+          <button class="btn-connect">Connect</button>
+        </div>
+      </div>
+    </section>
 
-    <!-- Main Content Grid -->
-    <div class="main-grid">
-      <!-- Left Sidebar (Profile/Stats) -->
-      <aside class="sidebar left-sidebar">
-        <div class="profile-card">
-          <div class="profile-bg"></div>
-          <div class="profile-info">
-            <div class="profile-avatar">👤</div>
-            <h3 id="sidebar-username">User Name</h3>
-            <p class="profile-headline">Research Scientist at Institute</p>
-          </div>
-          <div class="profile-stats">
-            <div class="stat-row">
-              <span>Profile viewers</span>
-              <span class="stat-num">42</span>
-            </div>
-            <div class="stat-row">
-              <span>Post impressions</span>
-              <span class="stat-num">1.2k</span>
-            </div>
+    <!-- PRODUCTS SECTION -->
+    <section id="products-section" class="content-section">
+      <div class="section-header">
+        <h2>Scientific Marketplace</h2>
+        <button class="btn-primary">List Product</button>
+      </div>
+      <div class="products-list">
+        <div class="product-card">
+          <div class="product-img">🔬</div>
+          <div class="product-info">
+            <h3>Electron Microscope 3000</h3>
+            <p class="price">$12,000</p>
+            <p class="desc">High resolution imaging for cellular structures. Gently used, calibrated last month.</p>
+            <button class="btn-outline">View Details</button>
           </div>
         </div>
-      </aside>
-
-      <!-- Main Feed / Content Area -->
-      <main class="content-area">
-
-        <!-- HOME FEED SECTION -->
-        <section id="feed-section" class="content-section active">
-          <div class="create-post-card">
-            <div class="input-row">
-              <div class="user-avatar">👤</div>
-              <input type="text" id="message-input" placeholder="Share your research or ask a question..."
-                autocomplete="off" />
-            </div>
-            <div class="action-row">
-              <button class="action-btn">📷 Media</button>
-              <button class="action-btn">📄 Article</button>
-              <button id="send-btn" class="post-btn">Post</button>
-            </div>
-          </div>
-          <div id="feed-stream" class="feed-stream">
-            <!-- Posts will appear here -->
-            <div class="loading-spinner">Loading updates...</div>
-          </div>
-        </section>
-
-        <!-- NETWORK SECTION -->
-        <section id="network-section" class="content-section">
-          <div class="section-header">
-            <h2>My Network</h2>
-            <button class="btn-secondary">Manage</button>
-          </div>
-          <div class="network-grid">
-            <!-- Example Connection Cards -->
-            <div class="connection-card">
-              <div class="conn-bg"></div>
-              <div class="conn-avatar">🧬</div>
-              <h3>Dr. Sarah Miller</h3>
-              <p>Biochemist | Stanford</p>
-              <button class="btn-connect">Connect</button>
-            </div>
-            <div class="connection-card">
-              <div class="conn-bg"></div>
-              <div class="conn-avatar">🔭</div>
-              <h3>James Chen</h3>
-              <p>Astrophysicist | NASA</p>
-              <button class="btn-connect">Connect</button>
-            </div>
-            <div class="connection-card">
-              <div class="conn-bg"></div>
-              <div class="conn-avatar">🧠</div>
-              <h3>Dr. Raj Patel</h3>
-              <p>Neuroscientist | MIT</p>
-              <button class="btn-connect">Connect</button>
-            </div>
-          </div>
-        </section>
-
-        <!-- PRODUCTS SECTION -->
-        <section id="products-section" class="content-section">
-          <div class="section-header">
-            <h2>Scientific Marketplace</h2>
-            <button class="btn-primary">List Product</button>
-          </div>
-          <div class="products-list">
-            <div class="product-card">
-              <div class="product-img">🔬</div>
-              <div class="product-info">
-                <h3>Electron Microscope 3000</h3>
-                <p class="price">$12,000</p>
-                <p class="desc">High resolution imaging for cellular structures. Gently used, calibrated last month.</p>
-                <button class="btn-outline">View Details</button>
-              </div>
-            </div>
-            <div class="product-card">
-              <div class="product-img">🧪</div>
-              <div class="product-info">
-                <h3>Lab Grade Reagents Kit</h3>
-                <p class="price">$450</p>
-                <p class="desc">Complete set for organic chemistry synthesis. Sealed and certified.</p>
-                <button class="btn-outline">View Details</button>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- NEWS SECTION -->
-        <section id="news-section" class="content-section">
-          <div class="section-header">
-            <h2>Science News</h2>
-          </div>
-          <div class="news-feed">
-            <article class="news-item">
-              <div class="news-content">
-                <h3>Breakthrough in Fusion Energy</h3>
-                <p class="news-meta">Physics Today • 2h ago</p>
-                <p>Scientists achieve net energy gain in latest fusion experiment, paving the way for clean unlimited
-                  power.</p>
-              </div>
-              <div class="news-img">⚡</div>
-            </article>
-            <article class="news-item">
-              <div class="news-content">
-                <h3>New Species Discovered in Amazon</h3>
-                <p class="news-meta">BioWeekly • 5h ago</p>
-                <p>A previously unknown species of tree frog has been identified in the remote Amazon basin.</p>
-              </div>
-              <div class="news-img">🐸</div>
-            </article>
-            <article class="news-item">
-              <div class="news-content">
-                <h3>AI in Drug Discovery</h3>
-                <p class="news-meta">Tech & Science • 1d ago</p>
-                <p>How machine learning models are accelerating the identification of potential cancer treatments.</p>
-              </div>
-              <div class="news-img">💻</div>
-            </article>
-          </div>
-        </section>
-
-      </main>
-
-      <!-- Right Sidebar (News/Ads) -->
-      <aside class="sidebar right-sidebar">
-        <div class="sidebar-panel">
-          <h3>Lattice News</h3>
-          <ul class="news-list">
-            <li>
-              <span class="bullet">●</span>
-              <div class="news-snippet">
-                <h4>Top Science Stories</h4>
-                <p>Daily rundown</p>
-              </div>
-            </li>
-            <li>
-              <span class="bullet">●</span>
-              <div class="news-snippet">
-                <h4>Grant Opportunities</h4>
-                <p>Apply now</p>
-              </div>
-            </li>
-            <li>
-              <span class="bullet">●</span>
-              <div class="news-snippet">
-                <h4>Upcoming Conferences</h4>
-                <p>Register early</p>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div class="sidebar-panel ad-panel">
-          <p class="ad-label">Promoted</p>
-          <div class="ad-content">
-            <h4>LabManager Pro</h4>
-            <p>Organize your lab inventory efficiently. Try it free for 30 days.</p>
-            <button class="btn-outline small">Learn More</button>
+        <div class="product-card">
+          <div class="product-img">🧪</div>
+          <div class="product-info">
+            <h3>Lab Grade Reagents Kit</h3>
+            <p class="price">$450</p>
+            <p class="desc">Complete set for organic chemistry synthesis. Sealed and certified.</p>
+            <button class="btn-outline">View Details</button>
           </div>
         </div>
-      </aside>
+      </div>
+    </section>
+
+    <!-- NEWS SECTION -->
+    <section id="news-section" class="content-section">
+      <div class="section-header">
+        <h2>Science News</h2>
+      </div>
+      <div class="news-feed">
+        <article class="news-item">
+          <div class="news-content">
+            <h3>Breakthrough in Fusion Energy</h3>
+            <p class="news-meta">Physics Today • 2h ago</p>
+            <p>Scientists achieve net energy gain in latest fusion experiment, paving the way for clean unlimited
+              power.</p>
+          </div>
+          <div class="news-img">⚡</div>
+        </article>
+        <article class="news-item">
+          <div class="news-content">
+            <h3>New Species Discovered in Amazon</h3>
+            <p class="news-meta">BioWeekly • 5h ago</p>
+            <p>A previously unknown species of tree frog has been identified in the remote Amazon basin.</p>
+          </div>
+          <div class="news-img">🐸</div>
+        </article>
+        <article class="news-item">
+          <div class="news-content">
+            <h3>AI in Drug Discovery</h3>
+            <p class="news-meta">Tech & Science • 1d ago</p>
+            <p>How machine learning models are accelerating the identification of potential cancer treatments.</p>
+          </div>
+          <div class="news-img">💻</div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Right Sidebar (News/Ads) -->
+  <aside class="sidebar right-sidebar">
+    <div class="sidebar-panel">
+      <h3>Lattice News</h3>
+      <ul class="news-list">
+        <li>
+          <span class="bullet">●</span>
+          <div class="news-snippet">
+            <h4>Top Science Stories</h4>
+            <p>Daily rundown</p>
+          </div>
+        </li>
+        <li>
+          <span class="bullet">●</span>
+          <div class="news-snippet">
+            <h4>Grant Opportunities</h4>
+            <p>Apply now</p>
+          </div>
+        </li>
+        <li>
+          <span class="bullet">●</span>
+          <div class="news-snippet">
+            <h4>Upcoming Conferences</h4>
+            <p>Register early</p>
+          </div>
+        </li>
+      </ul>
     </div>
+    <div class="sidebar-panel ad-panel">
+      <p class="ad-label">Promoted</p>
+      <div class="ad-content">
+        <h4>LabManager Pro</h4>
+        <p>Organize your lab inventory efficiently. Try it free for 30 days.</p>
+        <button class="btn-outline small">Learn More</button>
+      </div>
+    </div>
+  </aside>
+  </div>
   </div>
 
   <!-- Firebase SDKs -->
@@ -309,6 +188,6 @@
   <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
 
   <script src="script.js"></script>
-</body>
+  </body>
 
 </html>
