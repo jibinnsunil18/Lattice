@@ -299,8 +299,36 @@ img {
   box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
 }
 
-grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-gap: 40px;
+.btn-full {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.btn-sm {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--bg-color);
+  background: var(--accent-primary);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-sm:hover {
+  box-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+/* ============ CARDS (Glassmorphism) ============ */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
 }
 
 .grid-2 {
