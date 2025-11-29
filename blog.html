@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Lattice</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Space+Grotesk:wght@700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Lattice<span class="dot">.</span></a>
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="contact.html" class="nav-link btn-nav">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-toggle" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="section bg-light" style="padding-top: 120px;">
+        <div class="container text-center">
+            <h1 class="section-title">Latest Insights</h1>
+            <p class="section-desc">Thoughts, trends, and tutorials from our team.</p>
+        </div>
+    </section>
+
+    <!-- Blog Grid -->
+    <section class="section">
+        <div class="container">
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-img"></div>
+                    <div class="blog-content">
+                        <span class="blog-date">Oct 24, 2023</span>
+                        <h3>The Future of AI in Web Dev</h3>
+                        <p>How artificial intelligence is reshaping the way we build the web.</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-img"></div>
+                    <div class="blog-content">
+                        <span class="blog-date">Nov 12, 2023</span>
+                        <h3>Optimizing for Core Web Vitals</h3>
+                        <p>Essential tips to improve your site's performance and SEO ranking.</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-img"></div>
+                    <div class="blog-content">
+                        <span class="blog-date">Dec 05, 2023</span>
+                        <h3>Design Trends for 2024</h3>
+                        <p>What to expect in the world of UI/UX design next year.</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-img"></div>
+                    <div class="blog-content">
+                        <span class="blog-date">Dec 15, 2023</span>
+                        <h3>Why Accessibility Matters</h3>
+                        <p>Building inclusive digital experiences for everyone.</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-img"></div>
+                    <div class="blog-content">
+                        <span class="blog-date">Jan 02, 2024</span>
+                        <h3>The Rise of Serverless</h3>
+                        <p>Understanding the benefits and trade-offs of serverless architecture.</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-img"></div>
+                    <div class="blog-content">
+                        <span class="blog-date">Jan 10, 2024</span>
+                        <h3>Mastering CSS Grid</h3>
+                        <p>A comprehensive guide to modern layout techniques.</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Lattice<span class="dot">.</span></h3>
+                    <p>Building the future, one pixel at a time.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#">LinkedIn</a>
+                        <a href="#">Twitter</a>
+                        <a href="#">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Lattice. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
