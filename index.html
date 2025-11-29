@@ -15,41 +15,28 @@
 
 <body>
 
-  <!-- AUTH CONTAINER -->
-  <div id="auth-container" class="auth-overlay">
-    <div class="auth-box">
-      <h2 class="auth-title">SYSTEM ACCESS</h2>
-      <p class="auth-subtitle">Identify yourself to enter the network.</p>
+  </div>
+  <button type="submit" class="btn btn-full">Connect</button>
+  <p class="auth-switch">New Node? <a href="#" id="show-signup">Initialize Sequence</a></p>
+  </form>
 
-      <!-- Login Form -->
-      <form id="login-form" class="auth-form active">
-        <div class="form-group">
-          <input type="email" id="login-email" class="form-input" placeholder="Email Address" required>
-        </div>
-        <div class="form-group">
-          <input type="password" id="login-password" class="form-input" placeholder="Password" required>
-        </div>
-        <button type="submit" class="btn btn-full">Connect</button>
-        <p class="auth-switch">New Node? <a href="#" id="show-signup">Initialize Sequence</a></p>
-      </form>
-
-      <!-- Signup Form -->
-      <form id="signup-form" class="auth-form">
-        <div class="form-group">
-          <input type="text" id="signup-name" class="form-input" placeholder="Display Name" required>
-        </div>
-        <div class="form-group">
-          <input type="email" id="signup-email" class="form-input" placeholder="Email Address" required>
-        </div>
-        <div class="form-group">
-          <input type="password" id="signup-password" class="form-input" placeholder="Password" required>
-        </div>
-        <button type="submit" class="btn btn-full">Register Node</button>
-        <p class="auth-switch">Existing Node? <a href="#" id="show-login">Connect</a></p>
-      </form>
-
-      <button id="close-auth" class="close-btn">×</button>
+  <!-- Signup Form -->
+  <form id="signup-form" class="auth-form">
+    <div class="form-group">
+      <input type="text" id="signup-name" class="form-input" placeholder="Display Name" required>
     </div>
+    <div class="form-group">
+      <input type="email" id="signup-email" class="form-input" placeholder="Email Address" required>
+    </div>
+    <div class="form-group">
+      <input type="password" id="signup-password" class="form-input" placeholder="Password" required>
+    </div>
+    <button type="submit" class="btn btn-full">Register Node</button>
+    <p class="auth-switch">Existing Node? <a href="#" id="show-login">Connect</a></p>
+  </form>
+
+  <button id="close-auth" class="close-btn">×</button>
+  </div>
   </div>
 
   <!-- LANDING PAGE CONTENT -->

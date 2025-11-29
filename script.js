@@ -147,6 +147,23 @@ function toggleAppState(isLoggedIn, userName = "User") {
   }
 }
 
+// Social Login Handlers
+document.querySelectorAll('.btn-social').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const provider = btn.classList.contains('google') ? 'Google' :
+      btn.classList.contains('github') ? 'GitHub' : 'LinkedIn';
+
+    if (firebaseConfig.apiKey === "YOUR_API_KEY") {
+      alert(`Demo Mode: Connecting with ${provider}...`);
+      toggleAppState(true, `User via ${provider}`);
+      authOverlay.classList.remove('active');
+    } else {
+      // Real Firebase Auth Provider Logic would go here
+      alert("Please configure Firebase Auth Providers in script.js");
+    }
+  });
+});
+
 // ============ MOBILE NAVIGATION ============
 if (mobileToggle) {
   mobileToggle.addEventListener('click', () => {
