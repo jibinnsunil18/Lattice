@@ -8,14 +8,13 @@ if (heroButton && heroMessage) {
   });
 }
 
-// Simple fake "contact form" handler (no real backend)
+// Simple demo contact form handler
 const contactForm = document.getElementById("contact-form");
 const formStatus = document.getElementById("form-status");
 
 if (contactForm && formStatus) {
   contactForm.addEventListener("submit", (event) => {
     event.preventDefault(); // stop real submit
-
     formStatus.textContent = "This is a demo. No data is actually sent.";
   });
 }

@@ -34,6 +34,7 @@ body {
 
 .nav {
   display: flex;
+  flex-wrap: wrap; /* wrap links if screen is small */
   align-items: center;
   justify-content: space-between;
   padding: 0.75rem 0;
@@ -44,11 +45,11 @@ body {
   font-weight: 700;
 }
 
+
 nav a {
   margin-left: 1rem;
-  color: #e5e7eb;
+  margin-top: 0.5rem; /* adds spacing when wrapped */
   text-decoration: none;
-  font-size: 0.95rem;
 }
 
 nav a:hover {
@@ -67,13 +68,19 @@ nav a:hover {
 }
 
 .hero h2 {
-  font-size: 2.2rem;
+  font-size: 6vw; /* scales with viewport width */
   margin-bottom: 1rem;
 }
 
 .hero p {
-  font-size: 1rem;
-  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px; /* optional */
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 /* Generic section */
