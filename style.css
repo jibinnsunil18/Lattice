@@ -159,21 +159,6 @@ img {
   background: var(--accent-primary);
   transition: var(--transition);
 }
-
-.nav-link:hover::after,
-.nav-link.active::after {
-  width: 100%;
-}
-
-.btn-nav {
-  border: 1px solid var(--glass-border);
-  padding: 8px 20px;
-  border-radius: 4px;
-}
-
-.btn-nav:hover {
-  border-color: var(--accent-primary);
-  background: rgba(0, 243, 255, 0.1);
 }
 
 .mobile-toggle {
