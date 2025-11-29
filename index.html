@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lattice | Future Systems</title>
-  <link rel="stylesheet" href="style.css?v=2">
+  <link rel="stylesheet" href="style.css?v=3">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -15,95 +15,221 @@
 
 <body>
 
-  <!-- Header -->
-  <header class="header">
-    <div class="container nav-container">
-      <a href="index.html" class="logo">Lattice<span>.</span></a>
-      <nav class="nav-menu">
-        <ul class="nav-list">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="about.html" class="nav-link">About</a></li>
-          <li><a href="services.html" class="nav-link">Services</a></li>
-          <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
-          <li><a href="blog.html" class="nav-link">Blog</a></li>
-          <li><a href="contact.html" class="nav-link">Contact</a></li>
-        </ul>
-      </nav>
-      <button class="mobile-toggle" aria-label="Toggle navigation">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
-    </div>
-  </header>
+  <!-- AUTH CONTAINER -->
+  <div id="auth-container" class="auth-overlay">
+    <div class="auth-box">
+      <h2 class="auth-title">SYSTEM ACCESS</h2>
+      <p class="auth-subtitle">Identify yourself to enter the network.</p>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <h1 class="hero-title">ARCHITECTING <br><span class="text-gradient">THE FUTURE</span></h1>
-        <p class="hero-subtitle">We build digital systems that defy convention. Advanced web solutions for the next
-          generation of business.</p>
-        <div class="hero-btns">
-          <a href="contact.html" class="btn">Initialize Project</a>
-          <a href="portfolio.html" class="btn btn-outline">View Systems</a>
+      <!-- Login Form -->
+      <form id="login-form" class="auth-form active">
+        <div class="form-group">
+          <input type="email" id="login-email" class="form-input" placeholder="Email Address" required>
         </div>
-      </div>
-    </div>
-  </section>
+        <div class="form-group">
+          <input type="password" id="login-password" class="form-input" placeholder="Password" required>
+        </div>
+        <button type="submit" class="btn btn-full">Connect</button>
+        <p class="auth-switch">New Node? <a href="#" id="show-signup">Initialize Sequence</a></p>
+      </form>
 
-  <!-- Highlights -->
-  <section class="section">
-    <div class="container">
-      <div class="grid-3">
-        <div class="card">
-          <div class="card-icon">⚡</div>
-          <h3>Hyper Performance</h3>
-          <p>Optimized for speed and efficiency. Our code runs faster, cleaner, and smoother.</p>
+      <!-- Signup Form -->
+      <form id="signup-form" class="auth-form">
+        <div class="form-group">
+          <input type="text" id="signup-name" class="form-input" placeholder="Display Name" required>
         </div>
-        <div class="card">
-          <div class="card-icon">🛡️</div>
-          <h3>Cyber Security</h3>
-          <p>Fortified digital assets. We implement military-grade encryption and security protocols.</p>
+        <div class="form-group">
+          <input type="email" id="signup-email" class="form-input" placeholder="Email Address" required>
         </div>
-        <div class="card">
-          <div class="card-icon">🔮</div>
-          <h3>Future Proof</h3>
-          <p>Built with scalable technologies that grow with your vision. Ready for Web3 and beyond.</p>
+        <div class="form-group">
+          <input type="password" id="signup-password" class="form-input" placeholder="Password" required>
         </div>
-      </div>
-    </div>
-  </section>
+        <button type="submit" class="btn btn-full">Register Node</button>
+        <p class="auth-switch">Existing Node? <a href="#" id="show-login">Connect</a></p>
+      </form>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div>
-          <div class="logo">Lattice<span>.</span></div>
-          <p style="color: var(--text-muted); margin-top: 20px;">
-            123 Innovation Dr<br>
-            Tech City, TC 90210
-          </p>
-        </div>
-        <div>
-          <h4>SITEMAP</h4>
-          <a href="index.html">Home</a>
-          <a href="about.html">About</a>
-          <a href="services.html">Services</a>
-        </div>
-        <div>
-          <h4>CONNECT</h4>
-          <a href="#">LinkedIn</a>
-          <a href="#">Twitter</a>
-          <a href="#">GitHub</a>
-        </div>
-      </div>
-      <div style="text-align: center; color: var(--text-muted); font-size: 0.8rem;">
-        &copy; <span id="year"></span> Lattice Systems. All rights reserved.
-      </div>
+      <button id="close-auth" class="close-btn">×</button>
     </div>
-  </footer>
+  </div>
+
+  <!-- LANDING PAGE CONTENT -->
+  <div id="landing-page">
+    <!-- Header -->
+    <header class="header">
+      <div class="container nav-container">
+        <a href="index.html" class="logo">Lattice<span>.</span></a>
+        <nav class="nav-menu">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="services.html" class="nav-link">Services</a></li>
+            <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+            <li><a href="blog.html" class="nav-link">Blog</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+            <li><button id="login-btn" class="nav-link btn-nav">LOGIN</button></li>
+          </ul>
+        </nav>
+        <button class="mobile-toggle" aria-label="Toggle navigation">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="hero-title">ARCHITECTING <br><span class="text-gradient">THE FUTURE</span></h1>
+          <p class="hero-subtitle">We build digital systems that defy convention. Advanced web solutions for the next
+            generation of business.</p>
+          <div class="hero-btns">
+            <button id="hero-join-btn" class="btn">Join Network</button>
+            <a href="portfolio.html" class="btn btn-outline">View Systems</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Highlights -->
+    <section class="section">
+      <div class="container">
+        <div class="grid-3">
+          <div class="card">
+            <div class="card-icon">⚡</div>
+            <h3>Hyper Performance</h3>
+            <p>Optimized for speed and efficiency. Our code runs faster, cleaner, and smoother.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🛡️</div>
+            <h3>Cyber Security</h3>
+            <p>Fortified digital assets. We implement military-grade encryption and security protocols.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🔮</div>
+            <h3>Future Proof</h3>
+            <p>Built with scalable technologies that grow with your vision. Ready for Web3 and beyond.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div>
+            <div class="logo">Lattice<span>.</span></div>
+            <p style="color: var(--text-muted); margin-top: 20px;">
+              123 Innovation Dr<br>Tech City, TC 90210
+            </p>
+          </div>
+          <div>
+            <h4>SITEMAP</h4>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+          </div>
+          <div>
+            <h4>CONNECT</h4>
+            <a href="#">LinkedIn</a>
+            <a href="#">Twitter</a>
+            <a href="#">GitHub</a>
+          </div>
+        </div>
+        <div style="text-align: center; color: var(--text-muted); font-size: 0.8rem;">
+          &copy; <span id="year"></span> Lattice Systems. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- APP CONTAINER (Hidden by default) -->
+  <div id="app-container" class="app-container" style="display: none;">
+    <!-- App Header -->
+    <header class="header app-header">
+      <div class="container nav-container">
+        <a href="#" class="logo">Lattice<span>.</span></a>
+        <div class="app-nav">
+          <span id="user-display" class="user-name">User</span>
+          <button id="logout-btn" class="btn-outline btn-sm">Disconnect</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="container app-layout">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="card profile-card">
+          <div class="avatar"></div>
+          <h3 id="sidebar-name">User Name</h3>
+          <p>Level 1 Node</p>
+        </div>
+        <nav class="sidebar-nav">
+          <a href="#" class="active">Data Stream</a>
+          <a href="#">Network</a>
+          <a href="#">Messages</a>
+          <a href="#">Settings</a>
+        </nav>
+      </aside>
+
+      <!-- Main Feed -->
+      <main class="feed">
+        <!-- Create Post -->
+        <div class="card create-post">
+          <textarea id="post-content" placeholder="Broadcast transmission..."></textarea>
+          <button id="post-btn" class="btn">Broadcast</button>
+        </div>
+
+        <!-- Feed Stream -->
+        <div id="feed-stream">
+          <!-- Posts will be injected here -->
+          <div class="card post">
+            <div class="post-header">
+              <div class="post-avatar"></div>
+              <div>
+                <h4>System Admin</h4>
+                <span class="post-time">Just now</span>
+              </div>
+            </div>
+            <p class="post-body">Welcome to the Lattice Network. Secure connection established.</p>
+            <div class="post-actions">
+              <button>Like</button>
+              <button>Comment</button>
+              <button>Share</button>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Right Panel -->
+      <aside class="right-panel">
+        <div class="card">
+          <h3>Suggested Nodes</h3>
+          <ul class="node-list">
+            <li>
+              <div class="node-avatar"></div>
+              <div>
+                <h5>Sarah Lee</h5>
+                <button class="btn-sm">Connect</button>
+              </div>
+            </li>
+            <li>
+              <div class="node-avatar"></div>
+              <div>
+                <h5>Alex Morgan</h5>
+                <button class="btn-sm">Connect</button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
 
   <script src="script.js"></script>
 </body>
