@@ -1,175 +1,179 @@
 // ============ PAGE MANAGEMENT ============
 function showLoginPage() {
-  document.getElementById('login-page').classList.add('active');
-  document.getElementById('chat-page').classList.remove('active');
+  document.getElementById('auth-container').classList.add('active');
+  document.getElementById('app-container').classList.remove('active');
 }
 
-function showChatPage() {
-  document.getElementById('login-page').classList.remove('active');
-  document.getElementById('chat-page').classList.add('active');
+function showAppPage() {
+  document.getElementById('auth-container').classList.remove('active');
+  document.getElementById('app-container').classList.add('active');
 }
 
-// ============ LOGIN FUNCTIONALITY ============
+// ============ NAVIGATION ============
+const navButtons = document.querySelectorAll('.nav-icon[data-target]');
+const contentSections = document.querySelectorAll('.content-section');
+
+navButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    // Remove active class from all buttons and sections
+    navButtons.forEach(b => b.classList.remove('active'));
+    contentSections.forEach(s => s.classList.remove('active'));
+
+    // Add active class to clicked button
+    btn.classList.add('active');
+
+    // Show target section
+    const targetId = btn.getAttribute('data-target');
+    document.getElementById(targetId).classList.add('active');
+  });
+});
+
+// ============ AUTHENTICATION ============
 const loginForm = document.getElementById('login-form');
-const usernameInput = document.getElementById('username');
-const passwordInput = document.getElementById('password');
-const loginError = document.getElementById('login-error');
+const signupForm = document.getElementById('signup-form');
+const showSignupBtn = document.getElementById('show-signup-btn');
+const showLoginBtn = document.getElementById('show-login-btn');
+const authError = document.getElementById('auth-error');
 
+// Toggle between Login and Signup
+showSignupBtn.addEventListener('click', () => {
+  loginForm.classList.remove('active');
+  signupForm.classList.add('active');
+  authError.textContent = '';
+});
+
+showLoginBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  signupForm.classList.remove('active');
+  loginForm.classList.add('active');
+  authError.textContent = '';
+});
+
+// Login Logic
 loginForm.addEventListener('submit', (e) => {
   e.preventDefault();
+  const email = document.getElementById('login-email').value;
+  const password = document.getElementById('login-password').value;
 
-  const username = usernameInput.value.trim();
-  const password = passwordInput.value.trim();
-
-  // Simple validation
-  if (!username || !password) {
-    loginError.textContent = 'Please enter both username and password';
-    return;
-  }
-
-  if (username.length < 3) {
-    loginError.textContent = 'Username must be at least 3 characters';
-    return;
-  }
-
-  // Save user session to localStorage
-  localStorage.setItem('currentUser', JSON.stringify({
-    username: username,
-    loginTime: new Date().toISOString()
-  }));
-
-  // Clear form and errors
-  loginError.textContent = '';
-  usernameInput.value = '';
-  passwordInput.value = '';
-
-  // Switch to chat page
-  showChatPage();
-  loadChat();
-});
-
-// ============ CHAT FUNCTIONALITY ============
-const messageForm = document.getElementById('message-form');
-const messageInput = document.getElementById('message-input');
-const messagesContainer = document.getElementById('messages-container');
-const currentUserSpan = document.getElementById('current-user');
-const logoutBtn = document.getElementById('logout-btn');
-
-// Load current user info
-function loadChat() {
-  const user = JSON.parse(localStorage.getItem('currentUser'));
-  if (user) {
-    currentUserSpan.textContent = user.username;
-  }
-  loadMessages();
-}
-
-// Load messages from localStorage
-function loadMessages() {
-  const messages = JSON.parse(localStorage.getItem('chatMessages')) || [];
-  messagesContainer.innerHTML = '';
-
-  if (messages.length === 0) {
-    const systemMsg = document.createElement('div');
-    systemMsg.className = 'message system-message';
-    systemMsg.innerHTML = '<p>Welcome to Lattice Chat! Start a conversation.</p>';
-    messagesContainer.appendChild(systemMsg);
+  if (email && password) {
+    // Simulate login
+    localStorage.setItem('currentUser', JSON.stringify({ username: email.split('@')[0] }));
+    loadApp();
   } else {
-    messages.forEach(msg => addMessageToDOM(msg));
+    authError.textContent = 'Please enter valid credentials';
   }
-
-  // Scroll to bottom
-  messagesContainer.scrollTop = messagesContainer.scrollHeight;
-}
-
-// Add message to DOM
-function addMessageToDOM(msg) {
-  const messageEl = document.createElement('div');
-  messageEl.className = `message ${msg.isOwn ? 'own' : 'other'}`;
-  
-  const content = document.createElement('p');
-  content.textContent = msg.text;
-  
-  messageEl.appendChild(content);
-  messagesContainer.appendChild(messageEl);
-}
-
-// Send message
-messageForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-
-  const text = messageInput.value.trim();
-  if (!text) return;
-
-  const user = JSON.parse(localStorage.getItem('currentUser'));
-  const newMessage = {
-    id: Date.now(),
-    username: user.username,
-    text: text,
-    timestamp: new Date().toISOString(),
-    isOwn: true
-  };
-
-  // Save message
-  const messages = JSON.parse(localStorage.getItem('chatMessages')) || [];
-  messages.push(newMessage);
-  localStorage.setItem('chatMessages', JSON.stringify(messages));
-
-  // Add to DOM
-  addMessageToDOM(newMessage);
-
-  // Clear input
-  messageInput.value = '';
-  messageInput.focus();
-
-  // Scroll to bottom
-  messagesContainer.scrollTop = messagesContainer.scrollHeight;
-
-  // Simulate response after 1 second
-  setTimeout(() => {
-    const responses = [
-      'That\'s interesting!',
-      'I agree!',
-      'Tell me more...',
-      'Sounds good!',
-      'Nice!',
-      'Absolutely!',
-      'How are you doing?',
-      'What do you think about that?'
-    ];
-
-    const randomResponse = responses[Math.floor(Math.random() * responses.length)];
-    const botMessage = {
-      id: Date.now(),
-      username: 'ChatBot',
-      text: randomResponse,
-      timestamp: new Date().toISOString(),
-      isOwn: false
-    };
-
-    const updatedMessages = JSON.parse(localStorage.getItem('chatMessages')) || [];
-    updatedMessages.push(botMessage);
-    localStorage.setItem('chatMessages', JSON.stringify(updatedMessages));
-
-    addMessageToDOM(botMessage);
-    messagesContainer.scrollTop = messagesContainer.scrollHeight;
-  }, 1000);
 });
 
-// Logout functionality
-logoutBtn.addEventListener('click', () => {
+// Signup Logic
+signupForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const username = document.getElementById('signup-username').value;
+  const email = document.getElementById('signup-email').value;
+
+  if (username && email) {
+    // Simulate signup
+    localStorage.setItem('currentUser', JSON.stringify({ username: username }));
+    loadApp();
+  }
+});
+
+// Logout
+document.getElementById('logout-btn').addEventListener('click', () => {
   localStorage.removeItem('currentUser');
-  messageInput.value = '';
   showLoginPage();
 });
 
-// ============ INITIALIZATION ============
-// Check if user is logged in
+// ============ APP LOGIC ============
+function loadApp() {
+  const user = JSON.parse(localStorage.getItem('currentUser'));
+  if (user) {
+    document.getElementById('current-username').textContent = user.username;
+    document.getElementById('sidebar-username').textContent = user.username;
+    showAppPage();
+    loadPosts();
+  } else {
+    showLoginPage();
+  }
+}
+
+// Feed Logic
+const messageInput = document.getElementById('message-input');
+const sendBtn = document.getElementById('send-btn');
+const feedStream = document.getElementById('feed-stream');
+
+function loadPosts() {
+  // Simulate loading posts
+  feedStream.innerHTML = '';
+  const posts = [
+    {
+      author: 'Dr. Emily Carter',
+      role: 'Molecular Biologist',
+      time: '2h ago',
+      content: 'Just published our latest findings on CRISPR-Cas9 off-target effects. Exciting times for gene editing! 🧬 #Science #Genetics',
+      avatar: '👩‍🔬'
+    },
+    {
+      author: 'Prof. Alan Grant',
+      role: 'Paleontologist',
+      time: '5h ago',
+      content: 'Digging into some new strata today. The fossil record never ceases to amaze. 🦕',
+      avatar: '🦖'
+    },
+    {
+      author: 'Dr. Sheldon Cooper',
+      role: 'Theoretical Physicist',
+      time: '1d ago',
+      content: 'String theory suggests that the fundamental constituents of the universe are one-dimensional "strings". Discuss.',
+      avatar: '⚛️'
+    }
+  ];
+
+  posts.forEach(post => addPostToDOM(post));
+}
+
+function addPostToDOM(post) {
+  const postEl = document.createElement('div');
+  postEl.className = 'post-card';
+  postEl.innerHTML = `
+    <div class="post-header">
+      <div class="user-avatar">${post.avatar || '👤'}</div>
+      <div class="post-info">
+        <h4>${post.author}</h4>
+        <p>${post.role} • ${post.time}</p>
+      </div>
+    </div>
+    <div class="post-content">
+      <p>${post.content}</p>
+    </div>
+    <div class="action-row">
+      <button class="action-btn">👍 Like</button>
+      <button class="action-btn">💬 Comment</button>
+      <button class="action-btn">↗️ Share</button>
+    </div>
+  `;
+  feedStream.prepend(postEl);
+}
+
+sendBtn.addEventListener('click', () => {
+  const text = messageInput.value.trim();
+  if (text) {
+    const user = JSON.parse(localStorage.getItem('currentUser'));
+    addPostToDOM({
+      author: user.username,
+      role: 'Research Scientist',
+      time: 'Just now',
+      content: text,
+      avatar: '👤'
+    });
+    messageInput.value = '';
+  }
+});
+
+// Initialize
 window.addEventListener('load', () => {
   const user = localStorage.getItem('currentUser');
   if (user) {
-    showChatPage();
-    loadChat();
+    loadApp();
   } else {
     showLoginPage();
   }
