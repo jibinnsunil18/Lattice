@@ -24,17 +24,15 @@
     <!-- HEADER -->
     <header class="header" id="header">
         <div class="container nav-container">
-            <a href="index.html" class="logo">Mat<span>Connect</span></a>
+            <a href="platform.html" class="logo">Mat<span>Connect</span></a>
 
             <nav class="nav-menu" id="navMenu">
                 <ul class="nav-list">
-                    <li><a href="#community" class="nav-link">Community</a></li>
-                    <li><a href="#jobs" class="nav-link">Jobs</a></li>
-                    <li><a href="#products" class="nav-link">Products</a></li>
-                    <li><a href="#datasets" class="nav-link">Datasets</a></li>
-                    <li><a href="#events" class="nav-link">Events</a></li>
+                    <li><a href="platform.html" class="nav-link active">Home</a></li>
+                    <li><a href="profile.html" class="nav-link">My Dashboard</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
                     <li><button class="btn-sm" id="loginBtn">Sign In</button></li>
-                    <li><button class="btn btn-sm" id="signupBtn">Join Now</button></li>
                 </ul>
             </nav>
 
@@ -91,281 +89,49 @@
         </div>
     </section>
 
-    <!-- MAIN TABS SECTION -->
-    <section class="section tabs-section">
+    <!-- FEATURES SECTION -->
+    <section class="section">
         <div class="container">
-            <div class="platform-tabs">
-                <button class="tab-btn active" data-tab="community">💬 Community</button>
-                <button class="tab-btn" data-tab="jobs">💼 Jobs</button>
-                <button class="tab-btn" data-tab="products">🛒 Products</button>
-                <button class="tab-btn" data-tab="datasets">📁 Datasets</button>
-                <button class="tab-btn" data-tab="events">🎓 Events</button>
-            </div>
+            <h2 class="section-title">Platform Features</h2>
 
-            <!-- TAB CONTENT: COMMUNITY -->
-            <div class="tab-content active" id="community">
-                <div class="section-header">
-                    <h2 class="section-title">Trending Discussions</h2>
-                    <a href="discussions.html" class="btn-outline btn-sm">View All</a>
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-icon">💬</div>
+                    <h3>Community Discussions</h3>
+                    <p>Join discussions on 2D materials, semiconductors, optics, and more. Share knowledge and get
+                        answers from experts.</p>
                 </div>
 
-                <div class="discussion-grid">
-                    <div class="discussion-card card">
-                        <div class="discussion-header">
-                            <span class="badge">2D Materials</span>
-                            <span class="discussion-time">2 hours ago</span>
-                        </div>
-                        <h3 class="discussion-title">How to improve PL intensity in monolayer MoS₂?</h3>
-                        <p class="discussion-preview">I've been trying to enhance the photoluminescence of CVD-grown
-                            MoS₂ but getting low intensity. Any suggestions on...</p>
-                        <div class="discussion-meta">
-                            <span>👤 Dr. Sarah Chen</span>
-                            <span>💬 24 replies</span>
-                            <span>👍 45 upvotes</span>
-                        </div>
-                    </div>
-
-                    <div class="discussion-card card">
-                        <div class="discussion-header">
-                            <span class="badge badge-secondary">Characterization</span>
-                            <span class="discussion-time">5 hours ago</span>
-                        </div>
-                        <h3 class="discussion-title">Best AFM settings for 2D material imaging?</h3>
-                        <p class="discussion-preview">Looking for optimal AFM parameters for imaging graphene on SiO₂.
-                            What scan rates and forces do you recommend...</p>
-                        <div class="discussion-meta">
-                            <span>👤 Prof. James Liu</span>
-                            <span>💬 18 replies</span>
-                            <span>👍 32 upvotes</span>
-                        </div>
-                    </div>
-
-                    <div class="discussion-card card">
-                        <div class="discussion-header">
-                            <span class="badge badge-tertiary">Synthesis</span>
-                            <span class="discussion-time">1 day ago</span>
-                        </div>
-                        <h3 class="discussion-title">CVD growth temperature for WS₂</h3>
-                        <p class="discussion-preview">What's the optimal temperature range for CVD synthesis of
-                            large-area WS₂? I'm getting inconsistent results...</p>
-                        <div class="discussion-meta">
-                            <span>👤 Maria Rodriguez</span>
-                            <span>💬 31 replies</span>
-                            <span>👍 67 upvotes</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- TAB CONTENT: JOBS -->
-            <div class="tab-content" id="jobs">
-                <div class="section-header">
-                    <h2 class="section-title">Latest Job Postings</h2>
-                    <a href="jobs.html" class="btn-outline btn-sm">View All Jobs</a>
+                <div class="card">
+                    <div class="card-icon">💼</div>
+                    <h3>Job Board</h3>
+                    <p>Find PhD positions, postdoc opportunities, and industry jobs in material science. Post and apply
+                        for positions.</p>
                 </div>
 
-                <div class="job-grid">
-                    <div class="job-card card">
-                        <div class="job-header">
-                            <h3>PhD Position - 2D Materials</h3>
-                            <span class="badge">Full-time</span>
-                        </div>
-                        <p class="job-company">MIT - Materials Science Department</p>
-                        <p class="job-description">Seeking motivated PhD candidate for research on van der Waals
-                            heterostructures and quantum materials...</p>
-                        <div class="job-meta">
-                            <span>📍 Cambridge, MA</span>
-                            <span>💰 $35K/year</span>
-                            <span>⏰ Deadline: Jan 15, 2026</span>
-                        </div>
-                        <button class="btn btn-sm btn-full">Apply Now</button>
-                    </div>
-
-                    <div class="job-card card">
-                        <div class="job-header">
-                            <h3>Postdoc - Nanomaterials</h3>
-                            <span class="badge badge-secondary">Postdoc</span>
-                        </div>
-                        <p class="job-company">Stanford University</p>
-                        <p class="job-description">Postdoctoral position in synthesis and characterization of novel
-                            nanomaterials for energy applications...</p>
-                        <div class="job-meta">
-                            <span>📍 Stanford, CA</span>
-                            <span>💰 $65K/year</span>
-                            <span>⏰ Deadline: Dec 20, 2025</span>
-                        </div>
-                        <button class="btn btn-sm btn-full">Apply Now</button>
-                    </div>
-
-                    <div class="job-card card">
-                        <div class="job-header">
-                            <h3>Research Scientist - Semiconductors</h3>
-                            <span class="badge badge-tertiary">Industry</span>
-                        </div>
-                        <p class="job-company">Intel Corporation</p>
-                        <p class="job-description">Join our advanced materials team working on next-generation
-                            semiconductor devices and materials...</p>
-                        <div class="job-meta">
-                            <span>📍 Santa Clara, CA</span>
-                            <span>💰 $120K-150K/year</span>
-                            <span>⏰ Deadline: Jan 30, 2026</span>
-                        </div>
-                        <button class="btn btn-sm btn-full">Apply Now</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- TAB CONTENT: PRODUCTS -->
-            <div class="tab-content" id="products">
-                <div class="section-header">
-                    <h2 class="section-title">Featured Products</h2>
-                    <a href="marketplace.html" class="btn-outline btn-sm">Browse Marketplace</a>
+                <div class="card">
+                    <div class="card-icon">🛒</div>
+                    <h3>Product Marketplace</h3>
+                    <p>Browse and purchase lab equipment, materials, and consumables. Connect directly with vendors.</p>
                 </div>
 
-                <div class="product-grid grid-3">
-                    <div class="product-card card">
-                        <div class="product-img" style="background: linear-gradient(135deg, #e8f5ee, #c8e6d7);"></div>
-                        <h3>Monolayer MoS₂ Crystals</h3>
-                        <p class="product-vendor">NanoMaterials Inc.</p>
-                        <p class="product-description">High-quality CVD-grown monolayer MoS₂ on SiO₂/Si substrate</p>
-                        <div class="product-price">Contact for pricing</div>
-                        <button class="btn btn-sm btn-full">Request Quote</button>
-                    </div>
-
-                    <div class="product-card card">
-                        <div class="product-img" style="background: linear-gradient(135deg, #e8f5ee, #c8e6d7);"></div>
-                        <h3>Raman Spectrometer</h3>
-                        <p class="product-vendor">SpectraLab Equipment</p>
-                        <p class="product-description">High-resolution Raman system with 532nm laser, ideal for 2D
-                            materials</p>
-                        <div class="product-price">$45,000</div>
-                        <button class="btn btn-sm btn-full">Request Quote</button>
-                    </div>
-
-                    <div class="product-card card">
-                        <div class="product-img" style="background: linear-gradient(135deg, #e8f5ee, #c8e6d7);"></div>
-                        <h3>Graphene Oxide Powder</h3>
-                        <p class="product-vendor">Carbon Materials Co.</p>
-                        <p class="product-description">99.5% pure graphene oxide, 1-5 layers, 100g package</p>
-                        <div class="product-price">$299</div>
-                        <button class="btn btn-sm btn-full">Request Quote</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- TAB CONTENT: DATASETS -->
-            <div class="tab-content" id="datasets">
-                <div class="section-header">
-                    <h2 class="section-title">Recent Datasets</h2>
-                    <a href="datasets.html" class="btn-outline btn-sm">Explore All</a>
+                <div class="card">
+                    <div class="card-icon">📁</div>
+                    <h3>Dataset Repository</h3>
+                    <p>Upload and download research datasets. Share PL spectra, Raman data, AFM images, and more.</p>
                 </div>
 
-                <div class="dataset-grid">
-                    <div class="dataset-card card">
-                        <div class="dataset-header">
-                            <span class="badge">PL Spectroscopy</span>
-                            <span class="dataset-size">2.4 MB</span>
-                        </div>
-                        <h3>MoS₂ PL Temperature Dependence</h3>
-                        <p class="dataset-author">By Dr. Emily Zhang - UC Berkeley</p>
-                        <p class="dataset-description">Photoluminescence spectra of monolayer MoS₂ from 4K to 300K with
-                            analysis...</p>
-                        <div class="dataset-meta">
-                            <span>📊 CSV + Images</span>
-                            <span>⬇️ 234 downloads</span>
-                            <span>📅 Dec 2025</span>
-                        </div>
-                        <button class="btn-outline btn-sm btn-full">Download</button>
-                    </div>
-
-                    <div class="dataset-card card">
-                        <div class="dataset-header">
-                            <span class="badge badge-secondary">Raman</span>
-                            <span class="dataset-size">1.8 MB</span>
-                        </div>
-                        <h3>Graphene Raman Mapping Data</h3>
-                        <p class="dataset-author">By Prof. Michael Chen - MIT</p>
-                        <p class="dataset-description">High-resolution Raman mapping of CVD graphene showing G and 2D
-                            peaks...</p>
-                        <div class="dataset-meta">
-                            <span>📊 DAT + TXT</span>
-                            <span>⬇️ 189 downloads</span>
-                            <span>📅 Nov 2025</span>
-                        </div>
-                        <button class="btn-outline btn-sm btn-full">Download</button>
-                    </div>
-
-                    <div class="dataset-card card">
-                        <div class="dataset-header">
-                            <span class="badge badge-tertiary">AFM</span>
-                            <span class="dataset-size">5.2 MB</span>
-                        </div>
-                        <h3>WS₂ AFM Topography</h3>
-                        <p class="dataset-author">By Sarah Johnson - Stanford</p>
-                        <p class="dataset-description">Atomic force microscopy images of exfoliated WS₂ flakes with
-                            thickness analysis...</p>
-                        <div class="dataset-meta">
-                            <span>📊 Images</span>
-                            <span>⬇️ 156 downloads</span>
-                            <span>📅 Dec 2025</span>
-                        </div>
-                        <button class="btn-outline btn-sm btn-full">Download</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- TAB CONTENT: EVENTS -->
-            <div class="tab-content" id="events">
-                <div class="section-header">
-                    <h2 class="section-title">Upcoming Events</h2>
-                    <a href="events.html" class="btn-outline btn-sm">View Calendar</a>
+                <div class="card">
+                    <div class="card-icon">🎓</div>
+                    <h3>Events & Conferences</h3>
+                    <p>Stay updated on upcoming conferences, workshops, and webinars in material science.</p>
                 </div>
 
-                <div class="event-grid">
-                    <div class="event-card card">
-                        <div class="event-date">
-                            <div class="date-day">15</div>
-                            <div class="date-month">JAN</div>
-                        </div>
-                        <div class="event-details">
-                            <span class="badge">Conference</span>
-                            <h3>International Conference on 2D Materials</h3>
-                            <p class="event-location">📍 Singapore</p>
-                            <p class="event-description">Join leading researchers discussing latest advances in 2D
-                                materials synthesis, characterization, and applications...</p>
-                            <button class="btn-outline btn-sm">Register</button>
-                        </div>
-                    </div>
-
-                    <div class="event-card card">
-                        <div class="event-date">
-                            <div class="date-day">22</div>
-                            <div class="date-month">JAN</div>
-                        </div>
-                        <div class="event-details">
-                            <span class="badge badge-secondary">Workshop</span>
-                            <h3>Raman Spectroscopy Workshop</h3>
-                            <p class="event-location">📍 Online</p>
-                            <p class="event-description">Hands-on workshop covering Raman spectroscopy techniques for
-                                nanomaterials characterization...</p>
-                            <button class="btn-outline btn-sm">Register</button>
-                        </div>
-                    </div>
-
-                    <div class="event-card card">
-                        <div class="event-date">
-                            <div class="date-day">05</div>
-                            <div class="date-month">FEB</div>
-                        </div>
-                        <div class="event-details">
-                            <span class="badge badge-tertiary">Webinar</span>
-                            <h3>Career Paths in Materials Science</h3>
-                            <p class="event-location">📍 Online</p>
-                            <p class="event-description">Panel discussion with industry leaders and academics about
-                                career opportunities in materials science...</p>
-                            <button class="btn-outline btn-sm">Register</button>
-                        </div>
-                    </div>
+                <div class="card">
+                    <div class="card-icon">🔬</div>
+                    <h3>Lab Directory</h3>
+                    <p>Discover research labs, their equipment, and capabilities. Connect with research groups
+                        worldwide.</p>
                 </div>
             </div>
         </div>
@@ -429,10 +195,9 @@
                 </div>
                 <div class="footer-col">
                     <h4>Platform</h4>
-                    <a href="#community">Community</a>
-                    <a href="#jobs">Jobs</a>
-                    <a href="#products">Marketplace</a>
-                    <a href="#datasets">Datasets</a>
+                    <a href="profile.html">Dashboard</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
                 </div>
                 <div class="footer-col">
                     <h4>Resources</h4>
@@ -442,11 +207,10 @@
                     <a href="#">Support</a>
                 </div>
                 <div class="footer-col">
-                    <h4>Company</h4>
-                    <a href="#">About</a>
-                    <a href="#">Contact</a>
+                    <h4>Legal</h4>
                     <a href="#">Privacy</a>
                     <a href="#">Terms</a>
+                    <a href="#">Cookies</a>
                 </div>
             </div>
             <div
@@ -483,7 +247,7 @@
 
                 <div class="auth-divider"><span>or continue with email</span></div>
 
-                <form>
+                <form id="loginFormSubmit">
                     <div class="form-group">
                         <label>Email</label>
                         <input type="email" class="form-input" placeholder="your.email@university.edu" required>
@@ -522,7 +286,7 @@
 
                 <div class="auth-divider"><span>or sign up with email</span></div>
 
-                <form>
+                <form id="signupFormSubmit">
                     <div class="form-group">
                         <label>Full Name</label>
                         <input type="text" class="form-input" placeholder="Dr. Jane Smith" required>
