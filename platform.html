@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MatConnect - Material Science Research Platform</title>
+    <meta name="description"
+        content="A platform for researchers, students, labs, vendors, and companies in material science to connect, share, discuss, buy/sell, and grow.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="platform.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Mat<span>Connect</span></a>
+
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="#community" class="nav-link">Community</a></li>
+                    <li><a href="#jobs" class="nav-link">Jobs</a></li>
+                    <li><a href="#products" class="nav-link">Products</a></li>
+                    <li><a href="#datasets" class="nav-link">Datasets</a></li>
+                    <li><a href="#events" class="nav-link">Events</a></li>
+                    <li><button class="btn-sm" id="loginBtn">Sign In</button></li>
+                    <li><button class="btn btn-sm" id="signupBtn">Join Now</button></li>
+                </ul>
+            </nav>
+
+            <button class="mobile-toggle" id="mobileToggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero platform-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Connect. Collaborate. <span class="text-gradient">Innovate.</span></h1>
+                <p class="hero-subtitle">The ultimate platform for material science researchers, students, labs,
+                    vendors, and companies to share knowledge, find opportunities, and advance research.</p>
+
+                <!-- Search Bar -->
+                <div class="hero-search">
+                    <input type="text" class="search-input"
+                        placeholder="Search for jobs, materials, datasets, products, discussions...">
+                    <button class="btn search-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                        Search
+                    </button>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">15K+</div>
+                        <div class="stat-label">Researchers</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Labs</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">2.5K+</div>
+                        <div class="stat-label">Datasets</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">800+</div>
+                        <div class="stat-label">Products</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN TABS SECTION -->
+    <section class="section tabs-section">
+        <div class="container">
+            <div class="platform-tabs">
+                <button class="tab-btn active" data-tab="community">💬 Community</button>
+                <button class="tab-btn" data-tab="jobs">💼 Jobs</button>
+                <button class="tab-btn" data-tab="products">🛒 Products</button>
+                <button class="tab-btn" data-tab="datasets">📁 Datasets</button>
+                <button class="tab-btn" data-tab="events">🎓 Events</button>
+            </div>
+
+            <!-- TAB CONTENT: COMMUNITY -->
+            <div class="tab-content active" id="community">
+                <div class="section-header">
+                    <h2 class="section-title">Trending Discussions</h2>
+                    <a href="discussions.html" class="btn-outline btn-sm">View All</a>
+                </div>
+
+                <div class="discussion-grid">
+                    <div class="discussion-card card">
+                        <div class="discussion-header">
+                            <span class="badge">2D Materials</span>
+                            <span class="discussion-time">2 hours ago</span>
+                        </div>
+                        <h3 class="discussion-title">How to improve PL intensity in monolayer MoS₂?</h3>
+                        <p class="discussion-preview">I've been trying to enhance the photoluminescence of CVD-grown
+                            MoS₂ but getting low intensity. Any suggestions on...</p>
+                        <div class="discussion-meta">
+                            <span>👤 Dr. Sarah Chen</span>
+                            <span>💬 24 replies</span>
+                            <span>👍 45 upvotes</span>
+                        </div>
+                    </div>
+
+                    <div class="discussion-card card">
+                        <div class="discussion-header">
+                            <span class="badge badge-secondary">Characterization</span>
+                            <span class="discussion-time">5 hours ago</span>
+                        </div>
+                        <h3 class="discussion-title">Best AFM settings for 2D material imaging?</h3>
+                        <p class="discussion-preview">Looking for optimal AFM parameters for imaging graphene on SiO₂.
+                            What scan rates and forces do you recommend...</p>
+                        <div class="discussion-meta">
+                            <span>👤 Prof. James Liu</span>
+                            <span>💬 18 replies</span>
+                            <span>👍 32 upvotes</span>
+                        </div>
+                    </div>
+
+                    <div class="discussion-card card">
+                        <div class="discussion-header">
+                            <span class="badge badge-tertiary">Synthesis</span>
+                            <span class="discussion-time">1 day ago</span>
+                        </div>
+                        <h3 class="discussion-title">CVD growth temperature for WS₂</h3>
+                        <p class="discussion-preview">What's the optimal temperature range for CVD synthesis of
+                            large-area WS₂? I'm getting inconsistent results...</p>
+                        <div class="discussion-meta">
+                            <span>👤 Maria Rodriguez</span>
+                            <span>💬 31 replies</span>
+                            <span>👍 67 upvotes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB CONTENT: JOBS -->
+            <div class="tab-content" id="jobs">
+                <div class="section-header">
+                    <h2 class="section-title">Latest Job Postings</h2>
+                    <a href="jobs.html" class="btn-outline btn-sm">View All Jobs</a>
+                </div>
+
+                <div class="job-grid">
+                    <div class="job-card card">
+                        <div class="job-header">
+                            <h3>PhD Position - 2D Materials</h3>
+                            <span class="badge">Full-time</span>
+                        </div>
+                        <p class="job-company">MIT - Materials Science Department</p>
+                        <p class="job-description">Seeking motivated PhD candidate for research on van der Waals
+                            heterostructures and quantum materials...</p>
+                        <div class="job-meta">
+                            <span>📍 Cambridge, MA</span>
+                            <span>💰 $35K/year</span>
+                            <span>⏰ Deadline: Jan 15, 2026</span>
+                        </div>
+                        <button class="btn btn-sm btn-full">Apply Now</button>
+                    </div>
+
+                    <div class="job-card card">
+                        <div class="job-header">
+                            <h3>Postdoc - Nanomaterials</h3>
+                            <span class="badge badge-secondary">Postdoc</span>
+                        </div>
+                        <p class="job-company">Stanford University</p>
+                        <p class="job-description">Postdoctoral position in synthesis and characterization of novel
+                            nanomaterials for energy applications...</p>
+                        <div class="job-meta">
+                            <span>📍 Stanford, CA</span>
+                            <span>💰 $65K/year</span>
+                            <span>⏰ Deadline: Dec 20, 2025</span>
+                        </div>
+                        <button class="btn btn-sm btn-full">Apply Now</button>
+                    </div>
+
+                    <div class="job-card card">
+                        <div class="job-header">
+                            <h3>Research Scientist - Semiconductors</h3>
+                            <span class="badge badge-tertiary">Industry</span>
+                        </div>
+                        <p class="job-company">Intel Corporation</p>
+                        <p class="job-description">Join our advanced materials team working on next-generation
+                            semiconductor devices and materials...</p>
+                        <div class="job-meta">
+                            <span>📍 Santa Clara, CA</span>
+                            <span>💰 $120K-150K/year</span>
+                            <span>⏰ Deadline: Jan 30, 2026</span>
+                        </div>
+                        <button class="btn btn-sm btn-full">Apply Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB CONTENT: PRODUCTS -->
+            <div class="tab-content" id="products">
+                <div class="section-header">
+                    <h2 class="section-title">Featured Products</h2>
+                    <a href="marketplace.html" class="btn-outline btn-sm">Browse Marketplace</a>
+                </div>
+
+                <div class="product-grid grid-3">
+                    <div class="product-card card">
+                        <div class="product-img" style="background: linear-gradient(135deg, #e8f5ee, #c8e6d7);"></div>
+                        <h3>Monolayer MoS₂ Crystals</h3>
+                        <p class="product-vendor">NanoMaterials Inc.</p>
+                        <p class="product-description">High-quality CVD-grown monolayer MoS₂ on SiO₂/Si substrate</p>
+                        <div class="product-price">Contact for pricing</div>
+                        <button class="btn btn-sm btn-full">Request Quote</button>
+                    </div>
+
+                    <div class="product-card card">
+                        <div class="product-img" style="background: linear-gradient(135deg, #e8f5ee, #c8e6d7);"></div>
+                        <h3>Raman Spectrometer</h3>
+                        <p class="product-vendor">SpectraLab Equipment</p>
+                        <p class="product-description">High-resolution Raman system with 532nm laser, ideal for 2D
+                            materials</p>
+                        <div class="product-price">$45,000</div>
+                        <button class="btn btn-sm btn-full">Request Quote</button>
+                    </div>
+
+                    <div class="product-card card">
+                        <div class="product-img" style="background: linear-gradient(135deg, #e8f5ee, #c8e6d7);"></div>
+                        <h3>Graphene Oxide Powder</h3>
+                        <p class="product-vendor">Carbon Materials Co.</p>
+                        <p class="product-description">99.5% pure graphene oxide, 1-5 layers, 100g package</p>
+                        <div class="product-price">$299</div>
+                        <button class="btn btn-sm btn-full">Request Quote</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB CONTENT: DATASETS -->
+            <div class="tab-content" id="datasets">
+                <div class="section-header">
+                    <h2 class="section-title">Recent Datasets</h2>
+                    <a href="datasets.html" class="btn-outline btn-sm">Explore All</a>
+                </div>
+
+                <div class="dataset-grid">
+                    <div class="dataset-card card">
+                        <div class="dataset-header">
+                            <span class="badge">PL Spectroscopy</span>
+                            <span class="dataset-size">2.4 MB</span>
+                        </div>
+                        <h3>MoS₂ PL Temperature Dependence</h3>
+                        <p class="dataset-author">By Dr. Emily Zhang - UC Berkeley</p>
+                        <p class="dataset-description">Photoluminescence spectra of monolayer MoS₂ from 4K to 300K with
+                            analysis...</p>
+                        <div class="dataset-meta">
+                            <span>📊 CSV + Images</span>
+                            <span>⬇️ 234 downloads</span>
+                            <span>📅 Dec 2025</span>
+                        </div>
+                        <button class="btn-outline btn-sm btn-full">Download</button>
+                    </div>
+
+                    <div class="dataset-card card">
+                        <div class="dataset-header">
+                            <span class="badge badge-secondary">Raman</span>
+                            <span class="dataset-size">1.8 MB</span>
+                        </div>
+                        <h3>Graphene Raman Mapping Data</h3>
+                        <p class="dataset-author">By Prof. Michael Chen - MIT</p>
+                        <p class="dataset-description">High-resolution Raman mapping of CVD graphene showing G and 2D
+                            peaks...</p>
+                        <div class="dataset-meta">
+                            <span>📊 DAT + TXT</span>
+                            <span>⬇️ 189 downloads</span>
+                            <span>📅 Nov 2025</span>
+                        </div>
+                        <button class="btn-outline btn-sm btn-full">Download</button>
+                    </div>
+
+                    <div class="dataset-card card">
+                        <div class="dataset-header">
+                            <span class="badge badge-tertiary">AFM</span>
+                            <span class="dataset-size">5.2 MB</span>
+                        </div>
+                        <h3>WS₂ AFM Topography</h3>
+                        <p class="dataset-author">By Sarah Johnson - Stanford</p>
+                        <p class="dataset-description">Atomic force microscopy images of exfoliated WS₂ flakes with
+                            thickness analysis...</p>
+                        <div class="dataset-meta">
+                            <span>📊 Images</span>
+                            <span>⬇️ 156 downloads</span>
+                            <span>📅 Dec 2025</span>
+                        </div>
+                        <button class="btn-outline btn-sm btn-full">Download</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB CONTENT: EVENTS -->
+            <div class="tab-content" id="events">
+                <div class="section-header">
+                    <h2 class="section-title">Upcoming Events</h2>
+                    <a href="events.html" class="btn-outline btn-sm">View Calendar</a>
+                </div>
+
+                <div class="event-grid">
+                    <div class="event-card card">
+                        <div class="event-date">
+                            <div class="date-day">15</div>
+                            <div class="date-month">JAN</div>
+                        </div>
+                        <div class="event-details">
+                            <span class="badge">Conference</span>
+                            <h3>International Conference on 2D Materials</h3>
+                            <p class="event-location">📍 Singapore</p>
+                            <p class="event-description">Join leading researchers discussing latest advances in 2D
+                                materials synthesis, characterization, and applications...</p>
+                            <button class="btn-outline btn-sm">Register</button>
+                        </div>
+                    </div>
+
+                    <div class="event-card card">
+                        <div class="event-date">
+                            <div class="date-day">22</div>
+                            <div class="date-month">JAN</div>
+                        </div>
+                        <div class="event-details">
+                            <span class="badge badge-secondary">Workshop</span>
+                            <h3>Raman Spectroscopy Workshop</h3>
+                            <p class="event-location">📍 Online</p>
+                            <p class="event-description">Hands-on workshop covering Raman spectroscopy techniques for
+                                nanomaterials characterization...</p>
+                            <button class="btn-outline btn-sm">Register</button>
+                        </div>
+                    </div>
+
+                    <div class="event-card card">
+                        <div class="event-date">
+                            <div class="date-day">05</div>
+                            <div class="date-month">FEB</div>
+                        </div>
+                        <div class="event-details">
+                            <span class="badge badge-tertiary">Webinar</span>
+                            <h3>Career Paths in Materials Science</h3>
+                            <p class="event-location">📍 Online</p>
+                            <p class="event-description">Panel discussion with industry leaders and academics about
+                                career opportunities in materials science...</p>
+                            <button class="btn-outline btn-sm">Register</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section testimonials-section">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 60px;">What Our Community Says</h2>
+
+            <div class="testimonial-grid grid-3">
+                <div class="testimonial-card card">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"MatConnect has been invaluable for finding collaborators and accessing
+                        datasets. The community is incredibly supportive!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"></div>
+                        <div>
+                            <div class="author-name">Dr. Sarah Chen</div>
+                            <div class="author-title">Postdoc, MIT</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card card">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"As a vendor, this platform has connected us with researchers worldwide.
+                        The lead quality is excellent!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"></div>
+                        <div>
+                            <div class="author-name">John Martinez</div>
+                            <div class="author-title">CEO, NanoMaterials Inc.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card card">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Found my PhD position through MatConnect! The job board is specifically
+                        tailored for materials science."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"></div>
+                        <div>
+                            <div class="author-name">Emily Rodriguez</div>
+                            <div class="author-title">PhD Student, Stanford</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>MatConnect</h4>
+                    <p>Connecting the material science community worldwide.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Platform</h4>
+                    <a href="#community">Community</a>
+                    <a href="#jobs">Jobs</a>
+                    <a href="#products">Marketplace</a>
+                    <a href="#datasets">Datasets</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <a href="#">Documentation</a>
+                    <a href="#">API</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Support</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                </div>
+            </div>
+            <div
+                style="text-align: center; margin-top: 40px; padding-top: 40px; border-top: 1px solid var(--glass-border); color: var(--text-muted);">
+                <p>&copy; 2025 MatConnect. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AUTH OVERLAY -->
+    <div class="auth-overlay" id="authOverlay">
+        <div class="auth-box">
+            <button class="close-btn" id="closeAuth">&times;</button>
+
+            <!-- LOGIN FORM -->
+            <div class="auth-form active" id="loginForm">
+                <h2 class="auth-title">Welcome Back</h2>
+                <p class="auth-subtitle">Sign in to continue to MatConnect</p>
+
+                <div class="social-login">
+                    <button class="btn-social">
+                        <span>🔵</span>
+                        Google
+                    </button>
+                    <button class="btn-social">
+                        <span>🟢</span>
+                        ORCID
+                    </button>
+                    <button class="btn-social">
+                        <span>📧</span>
+                        Email
+                    </button>
+                </div>
+
+                <div class="auth-divider"><span>or continue with email</span></div>
+
+                <form>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" class="form-input" placeholder="your.email@university.edu" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-input" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" class="btn btn-full">Sign In</button>
+                </form>
+
+                <div class="auth-switch">
+                    Don't have an account? <a href="#" id="showSignup">Sign up</a>
+                </div>
+            </div>
+
+            <!-- SIGNUP FORM -->
+            <div class="auth-form" id="signupForm">
+                <h2 class="auth-title">Join MatConnect</h2>
+                <p class="auth-subtitle">Create your account to get started</p>
+
+                <div class="social-login">
+                    <button class="btn-social">
+                        <span>🔵</span>
+                        Google
+                    </button>
+                    <button class="btn-social">
+                        <span>🟢</span>
+                        ORCID
+                    </button>
+                    <button class="btn-social">
+                        <span>📧</span>
+                        Email
+                    </button>
+                </div>
+
+                <div class="auth-divider"><span>or sign up with email</span></div>
+
+                <form>
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" class="form-input" placeholder="Dr. Jane Smith" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" class="form-input" placeholder="your.email@university.edu" required>
+                    </div>
+                    <div class="form-group">
+                        <label>I am a...</label>
+                        <select class="form-input" required>
+                            <option value="">Select your role</option>
+                            <option value="researcher">Researcher / Student</option>
+                            <option value="vendor">Vendor / Seller</option>
+                            <option value="recruiter">Recruiter / Company</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-input" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" class="btn btn-full">Create Account</button>
+                </form>
+
+                <div class="auth-switch">
+                    Already have an account? <a href="#" id="showLogin">Sign in</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="platform.js"></script>
+</body>
+
+</html>
